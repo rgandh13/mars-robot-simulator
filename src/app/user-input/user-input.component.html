@@ -1,5 +1,24 @@
 <div class="form">
-  Please Enter Your Input:
-  <input class="input" />
+
+  <span class="select-text"> Please select one of the following choices </span>
   <i class="fas fa-info-circle help-icon" (click)="showHelp()"> </i>
+
+  <div>
+    <app-button label="PLACE" [isDisabled]="false" (click)="openPlaceDialog()"> </app-button>
+  </div>
+
+  <div>
+    <app-button label="MOVE" [isDisabled]="false" (click)="onMove()"> </app-button>
+  </div>
+
+  <div>
+    <app-button label="LEFT" [isDisabled]="false" (click)="onRotate('left')"> </app-button>
+    <app-button label="RIGHT" [isDisabled]="false" (click)="onRotate('right')"> </app-button>
+  </div>
+
+  <div>
+    <app-button label="REPORT" [isDisabled]="false" (click)="onReport()"> </app-button>
+  </div>
+
+
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
+import { PlaceCommandDialogComponent } from '../place-command-dialog/place-command-dialog.component';
 
 @Component({
   selector: 'app-user-input',
@@ -12,12 +13,26 @@ export class UserInputComponent {
   constructor(public dialog: MatDialog) { }
 
   showHelp() {
-    const dialogRef = this.dialog.open(HelpDialogComponent, { width: '250px' });
-    console.log('text');
+    this.dialog.open(HelpDialogComponent);
+  }
 
-    /*   const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-        width: '250px',
-        data: {name: this.name, animal: this.animal}
-      }); */
+  openPlaceDialog() {
+    this.dialog.open(PlaceCommandDialogComponent);
+  }
+
+  onMove() {
+    console.log('move');
+  }
+
+  onRotate(direction: string) {
+    console.log(direction);
+  }
+
+  onReport() {
+    console.log('report');
+  }
+
+  closeDialog() {
+
   }
 }

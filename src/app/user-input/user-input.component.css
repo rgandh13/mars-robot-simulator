@@ -4,10 +4,14 @@
 
 .help-icon {
   color: black;
-  margin-left: .5em;
-  font-size: 20px;
+  margin-left: 2px;
+  font-size: 22px;
 }
 
 .help-icon:hover {
   cursor: pointer;
+}
+
+.select-text {
+  font-size: 25px;
 }

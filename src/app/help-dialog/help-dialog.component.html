@@ -1,6 +1,19 @@
-<div mat-dialog-content>
-  text
+<div class="content" mat-dialog-content>
+  <pre> 
+  You can select one of the following commands: 
+  1) PLACE X, Y, F 
+  which will put the toy robot on the table in position X,Y
+  and facing NORTH, SOUTH, EAST or WEST. 
+  2) MOVE 
+  which will move the toy robot one unit forward in the direction it is currently
+  facing. 
+  3) LEFT 
+  which will rotate the robot 90 degrees in the left direction. 
+  4) RIGHT 
+  which will rotate the robot 90 degrees in the right direction. 
+  5) REPORT 
+  which will announce the X,Y and F of the robot. </pre>
 </div>
-<div mat-dialog-actions>
-  <button (click)="close()">Close</button>
+<div class="close-button" mat-dialog-actions>
+  <app-button label="Close" (click)="close()"> </app-button>
 </div>

@@ -1,13 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
+// Angular Material
+import { MatDialogModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { TableTopComponent } from './table-top/table-top.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { HelpDialogComponent } from './help-dialog/help-dialog.component';
+import { ButtonComponent } from './button/button.component';
+import { PlaceCommandDialogComponent } from './place-command-dialog/place-command-dialog.component';
+
+// Services
+import { GlobalService } from './shared/global.service';
+import { TableTopService } from './table-top/table-top.service';
 
 @NgModule({
   declarations: [
@@ -15,16 +24,25 @@ import { HelpDialogComponent } from './help-dialog/help-dialog.component';
     MainComponent,
     TableTopComponent,
     UserInputComponent,
-    HelpDialogComponent],
+    HelpDialogComponent,
+    ButtonComponent,
+    PlaceCommandDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    FormsModule,
+    MatDialogModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [GlobalService,
+    TableTopService],
   bootstrap: [AppComponent],
   entryComponents: [
-    HelpDialogComponent
+    HelpDialogComponent,
+    PlaceCommandDialogComponent
   ],
 })
 export class AppModule { }

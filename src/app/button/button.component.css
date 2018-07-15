@@ -1,0 +1,10 @@
+.button {
+  font-size: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

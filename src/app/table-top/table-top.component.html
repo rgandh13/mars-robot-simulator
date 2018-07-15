@@ -1,5 +1,7 @@
 <table class="table">
-  <tr *ngFor="let j of Arr(rows)">
-    <td class="cols" *ngFor="let i of Arr(cols)"> </td>
+  <tr *ngFor="let r of rows">
+    <td class="cols" *ngFor="let c of cols">
+      <i class="robot-icon fa" [ngClass]="getRobotDirection(r,c)"></i>
+    </td>
   </tr>
 </table>
