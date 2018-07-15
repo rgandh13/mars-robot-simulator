@@ -1,0 +1,13 @@
+.form {
+  margin-top: 200px;
+}
+
+.help-icon {
+  color: black;
+  margin-left: .5em;
+  font-size: 20px;
+}
+
+.help-icon:hover {
+  cursor: pointer;
+}
