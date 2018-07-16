@@ -17,6 +17,7 @@ import { PlaceCommandDialogComponent } from './place-command-dialog/place-comman
 // Services
 import { GlobalService } from './shared/global.service';
 import { TableTopService } from './table-top/table-top.service';
+import { RobotService } from './shared/robot.service';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,11 @@ import { TableTopService } from './table-top/table-top.service';
     MatInputModule,
     MatSelectModule
   ],
-  providers: [GlobalService,
-    TableTopService],
+  providers: [
+    GlobalService,
+    TableTopService,
+    RobotService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     HelpDialogComponent,

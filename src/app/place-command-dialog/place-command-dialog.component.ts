@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GlobalService } from '../shared/global.service';
-import { Directions } from '../shared/directions.enum';
 import { MatDialogRef } from '@angular/material';
-import { RobotModel } from '../shared/robot.model';
+import { RobotService } from '../shared/robot.service';
+import { Directions } from '../shared/directions.enum';
 
 @Component({
   selector: 'app-place-command-dialog',
@@ -11,32 +11,33 @@ import { RobotModel } from '../shared/robot.model';
 })
 export class PlaceCommandDialogComponent {
 
-  constructor(public dialogRef: MatDialogRef<PlaceCommandDialogComponent>) {
-    this.robot = RobotModel.getInstance();
-  }
-
-  // @Output() savePlaceInputs = new EventEmitter();
-
   directions = GlobalService.DIRECTIONS;
-  robot: RobotModel;
   x: string;
   y: string;
   facingDirection: Directions;
 
-  isInputValid(x: number, y: number) {
-    return (x >= 0 && x < GlobalService.ROWS) && (y >= 0 && y < GlobalService.COLS);
-  }
+  constructor(
+    public dialogRef: MatDialogRef<PlaceCommandDialogComponent>,
+    public robotService: RobotService) { }
 
   onSave() {
     const xCoordinate = parseInt(this.x, 0);
     const yCoordinate = parseInt(this.y, 0);
 
-    if (this.isInputValid(xCoordinate, yCoordinate)) {
-      this.robot.x = xCoordinate;
-      this.robot.y = yCoordinate;
-      this.robot.facingDirection = this.facingDirection;
+    if (this.robotService.isInputValid(xCoordinate, yCoordinate)) {
+      this.robotService.setRobotProperties({
+        xCoordinate: xCoordinate,
+        yCoordinate: yCoordinate,
+        facingDirection: this.facingDirection
+      });
+      this.dialogRef.close(true);
+      //   this.dialogRef.afterClosed().subscribe()
+    } else {
+      // show validation erro on dialog
     }
-    this.dialogRef.close();
-    // this.savePlaceInputs.emit();
+  }
+
+  onCancel() {
+    this.dialogRef.close(false);
   }
 }

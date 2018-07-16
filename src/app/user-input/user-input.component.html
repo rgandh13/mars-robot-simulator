@@ -4,20 +4,20 @@
   <i class="fas fa-info-circle help-icon" (click)="showHelp()"> </i>
 
   <div>
-    <app-button label="PLACE" [isDisabled]="false" (click)="openPlaceDialog()"> </app-button>
+    <app-button label="PLACE" (click)="openPlaceDialog()"> </app-button>
   </div>
 
   <div>
-    <app-button label="MOVE" [isDisabled]="false" (click)="onMove()"> </app-button>
+    <app-button label="MOVE" [isDisabled]="moveDisabled" (click)="onMove()"> </app-button>
   </div>
 
   <div>
-    <app-button label="LEFT" [isDisabled]="false" (click)="onRotate('left')"> </app-button>
-    <app-button label="RIGHT" [isDisabled]="false" (click)="onRotate('right')"> </app-button>
+    <app-button label="LEFT" [isDisabled]="!robotService.robot.robotPlaced" (click)="onRotate('left')"> </app-button>
+    <app-button label="RIGHT" [isDisabled]="!robotService.robot.robotPlaced" (click)="onRotate('right')"> </app-button>
   </div>
 
   <div>
-    <app-button label="REPORT" [isDisabled]="false" (click)="onReport()"> </app-button>
+    <app-button label="REPORT" [isDisabled]="!robotService.robot.robotPlaced" (click)="onReport()"> </app-button>
   </div>
 
 

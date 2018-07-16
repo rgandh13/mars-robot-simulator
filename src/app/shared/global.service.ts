@@ -11,6 +11,10 @@ export class GlobalService {
 
   public static get ROWS(): number { return 5; }
   public static get COLS(): number { return 5; }
+  public static LEFT = 'left';
+  public static RIGHT = 'right';
+
+
 
   public static get DIRECTIONS(): FaceDirections[] {
     return [
