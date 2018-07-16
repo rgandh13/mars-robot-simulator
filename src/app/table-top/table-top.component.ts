@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
 import { GlobalService } from '../shared/global.service';
-import { TableTopService } from './table-top.service';
+import { RobotService } from '../shared/robot.service';
 
 @Component({
   selector: 'app-table-top',
@@ -16,7 +16,7 @@ export class TableTopComponent implements AfterViewChecked {
   cols = Array.from({ length: GlobalService.COLS }).map((x, i) => i);
 
   constructor(
-    private tableTopService: TableTopService,
+    private robotService: RobotService,
     private cdRef: ChangeDetectorRef
   ) { }
 
@@ -25,7 +25,7 @@ export class TableTopComponent implements AfterViewChecked {
   }
 
   getRobotDirection(rowNo: number, colNo: number) {
-    return this.tableTopService.getFacingDirection(rowNo, colNo);
+    return this.robotService.getFacingDirection(rowNo, colNo);
   }
 
 }

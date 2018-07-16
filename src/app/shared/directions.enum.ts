@@ -1,7 +1,7 @@
 export enum Directions {
-    NORTH = 0,
-    EAST = 1,
-    SOUTH = 2,
-    WEST = 3,
-    NODIRECTION = -1
+    NORTH = 'North',
+    EAST = 'East',
+    SOUTH = 'South',
+    WEST = 'West',
+    NODIRECTION = 'No Direction'
 }

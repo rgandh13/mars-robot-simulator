@@ -3,21 +3,25 @@
   <span class="select-text"> Please select one of the following choices </span>
   <i class="fas fa-info-circle help-icon" (click)="showHelp()"> </i>
 
-  <div>
-    <app-button label="PLACE" (click)="openPlaceDialog()"> </app-button>
-  </div>
+  <div class="command-buttons">
+    <div>
+      <app-button label="PLACE" iconName="add_circle" (click)="openPlaceDialog()"> </app-button>
+    </div>
 
-  <div>
-    <app-button label="MOVE" [isDisabled]="moveDisabled" (click)="onMove()"> </app-button>
-  </div>
+    <div>
+      <app-button label="MOVE" [isDisabled]="moveDisabled" (click)="onMove()"> </app-button>
+    </div>
 
-  <div>
-    <app-button label="LEFT" [isDisabled]="!robotService.robot.robotPlaced" (click)="onRotate('left')"> </app-button>
-    <app-button label="RIGHT" [isDisabled]="!robotService.robot.robotPlaced" (click)="onRotate('right')"> </app-button>
-  </div>
+    <div>
+      <app-button label="LEFT" iconName="rotate_left" [isDisabled]="!robotService.robot.robotPlaced" (click)="onRotate('left')">
+      </app-button>
+      <app-button label="RIGHT" iconName="rotate_right" [isDisabled]="!robotService.robot.robotPlaced" (click)="onRotate('right')">
+      </app-button>
+    </div>
 
-  <div>
-    <app-button label="REPORT" [isDisabled]="!robotService.robot.robotPlaced" (click)="onReport()"> </app-button>
+    <div>
+      <app-button label="REPORT" iconName="report" [isDisabled]="!robotService.robot.robotPlaced" (click)="onReport()"> </app-button>
+    </div>
   </div>
 
 

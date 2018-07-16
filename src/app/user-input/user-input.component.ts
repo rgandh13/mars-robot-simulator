@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
+
 import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
 import { PlaceCommandDialogComponent } from '../place-command-dialog/place-command-dialog.component';
 import { RobotService } from '../shared/robot.service';
+import { ShowPositionDialogComponent } from '../show-position-dialog/show-position-dialog.component';
 
 @Component({
   selector: 'app-user-input',
@@ -42,10 +44,6 @@ export class UserInputComponent {
   }
 
   onReport() {
-    console.log('report');
-  }
-
-  closeDialog() {
-
+    this.dialog.open(ShowPositionDialogComponent);
   }
 }

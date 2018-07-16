@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 // Angular Material
-import { MatDialogModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -13,10 +13,10 @@ import { UserInputComponent } from './user-input/user-input.component';
 import { HelpDialogComponent } from './help-dialog/help-dialog.component';
 import { ButtonComponent } from './button/button.component';
 import { PlaceCommandDialogComponent } from './place-command-dialog/place-command-dialog.component';
+import { ShowPositionDialogComponent } from './show-position-dialog/show-position-dialog.component';
 
 // Services
 import { GlobalService } from './shared/global.service';
-import { TableTopService } from './table-top/table-top.service';
 import { RobotService } from './shared/robot.service';
 
 @NgModule({
@@ -27,26 +27,26 @@ import { RobotService } from './shared/robot.service';
     UserInputComponent,
     HelpDialogComponent,
     ButtonComponent,
-    PlaceCommandDialogComponent],
+    PlaceCommandDialogComponent,
+    ShowPositionDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     MatDialogModule,
-    MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule
   ],
   providers: [
     GlobalService,
-    TableTopService,
     RobotService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
     HelpDialogComponent,
-    PlaceCommandDialogComponent
+    PlaceCommandDialogComponent,
+    ShowPositionDialogComponent
   ],
 })
 export class AppModule { }

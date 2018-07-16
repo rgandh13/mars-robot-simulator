@@ -1,8 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  width: 400px;
 }
 
-.container>* {
-  width: 100%;
+.form-buttons {
+  justify-content: flex-end;
 }

@@ -1,6 +1,8 @@
 .cols {
   border: 1px solid black;
-  padding: 25px;
+  height: 6vw;
+  width: 6vw;
+  text-align: center;
 }
 
 .table {

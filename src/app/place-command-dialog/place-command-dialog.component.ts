@@ -31,9 +31,8 @@ export class PlaceCommandDialogComponent {
         facingDirection: this.facingDirection
       });
       this.dialogRef.close(true);
-      //   this.dialogRef.afterClosed().subscribe()
     } else {
-      // show validation erro on dialog
+      // show validation error on dialog
     }
   }
 

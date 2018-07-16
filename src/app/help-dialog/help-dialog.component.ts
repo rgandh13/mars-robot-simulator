@@ -8,7 +8,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class HelpDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<HelpDialogComponent>, ) { }
+  constructor(public dialogRef: MatDialogRef<HelpDialogComponent>) { }
 
   ngOnInit() {
   }

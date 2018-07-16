@@ -99,4 +99,32 @@ export class RobotService {
 
     return moveDisabled;
   }
+
+  getFacingDirection(rowNo: number, colNo: number): string {
+    let facingDirection = '';
+    if (this.robot.x === rowNo && this.robot.y === colNo) {
+      switch (this.robot.facingDirection) {
+        case Directions.NORTH:
+          facingDirection = 'fa-caret-up';
+          break;
+        case Directions.EAST:
+          facingDirection = 'fa-caret-right';
+          break;
+        case Directions.SOUTH:
+          facingDirection = 'fa-caret-down';
+          break;
+        case Directions.WEST:
+          facingDirection = 'fa-caret-left';
+          break;
+        default:
+          facingDirection = '';
+      }
+    }
+    return facingDirection;
+  }
+
+  getRobotPosition() {
+    return { X: this.robot.x, Y: this.robot.y, FacingDirection: this.robot.facingDirection };
+  }
+
 }

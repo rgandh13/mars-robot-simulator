@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Directions } from './directions.enum';
 
 export interface FaceDirections {
-  value: number;
+  value: string;
   viewValue: string;
 }
 
