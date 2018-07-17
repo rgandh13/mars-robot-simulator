@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HelpDialogComponent } from './help-dialog.component';
+import { ButtonComponent } from '../button/button.component';
+import { MatDialogRef } from '@angular/material';
 
 describe('HelpDialogComponent', () => {
   let component: HelpDialogComponent;
@@ -8,9 +10,10 @@ describe('HelpDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HelpDialogComponent ]
+      declarations: [HelpDialogComponent, ButtonComponent],
+      providers: [{ provide: MatDialogRef, useValue: {} }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

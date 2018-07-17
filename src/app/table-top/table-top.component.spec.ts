@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableTopComponent } from './table-top.component';
+import { GlobalService } from '../shared/global.service';
+import { RobotService } from '../shared/robot.service';
 
 describe('TabletopComponent', () => {
   let component: TableTopComponent;
@@ -8,7 +10,11 @@ describe('TabletopComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TableTopComponent]
+      declarations: [TableTopComponent],
+      providers: [
+        GlobalService,
+        RobotService,
+      ]
     })
       .compileComponents();
   }));
@@ -21,5 +27,9 @@ describe('TabletopComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should exist', () => {
+    expect(component).toBeDefined();
   });
 });
