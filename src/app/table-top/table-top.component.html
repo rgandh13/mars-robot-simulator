@@ -1,7 +1,7 @@
 <table class="table">
   <tr *ngFor="let r of rows">
     <td class="cols" *ngFor="let c of cols">
-      <i class="robot-icon fa" [ngClass]="getRobotDirection(r,c)"></i>
+      <i class="robot-icon material-icons">{{getRobotDirection(r,c)}}</i>
     </td>
   </tr>
 </table>

@@ -10,10 +10,12 @@ import { RobotService } from '../shared/robot.service';
 export class TableTopComponent implements AfterViewChecked {
 
   robotClass: string;
+  facingDirection: string;
 
-  Arr = Array; // Array type captured in a variable
-  rows = Array.from({ length: GlobalService.ROWS }).map((x, i) => (GlobalService.ROWS - 1) - i);
-  cols = Array.from({ length: GlobalService.COLS }).map((x, i) => i);
+  // Create an array for rows and cols from the globals
+  // For rows, array will be in descending order whereas cols will be in ascending order as (0,0) is south-west most corner.
+  rows = Array.from({ length: GlobalService.ROWS }).map((x, index) => index).reverse();
+  cols = Array.from({ length: GlobalService.COLS }).map((y, index) => index);
 
   constructor(
     private robotService: RobotService,

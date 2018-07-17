@@ -11,10 +11,11 @@ import { Directions } from '../shared/directions.enum';
 })
 export class PlaceCommandDialogComponent {
 
-  directions = GlobalService.DIRECTIONS;
   x: string;
   y: string;
   facingDirection: Directions;
+  directions = GlobalService.DIRECTIONS;
+  showError = false;
 
   constructor(
     public dialogRef: MatDialogRef<PlaceCommandDialogComponent>,
@@ -33,6 +34,7 @@ export class PlaceCommandDialogComponent {
       this.dialogRef.close(true);
     } else {
       // show validation error on dialog
+      this.showError = true;
     }
   }
 

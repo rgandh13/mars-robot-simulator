@@ -1,7 +1,9 @@
 <div class="form">
 
-  <span class="select-text"> Please select one of the following choices </span>
-  <i class="fas fa-info-circle help-icon" (click)="showHelp()"> </i>
+  <div class="header">
+    <span class="select-text"> Please select one of the following choices </span>
+    <i class="material-icons help-icon" (click)="showHelp()"> info </i>
+  </div>
 
   <div class="command-buttons">
     <div>
@@ -9,7 +11,7 @@
     </div>
 
     <div>
-      <app-button label="MOVE" [isDisabled]="moveDisabled" (click)="onMove()"> </app-button>
+      <app-button label="MOVE" iconName="android" [isDisabled]="moveDisabled" (click)="onMove()"> </app-button>
     </div>
 
     <div>

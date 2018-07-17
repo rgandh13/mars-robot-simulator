@@ -1,11 +1,14 @@
 .form {
-  margin-top: 200px;
+  margin-top: 180px;
+  border: 1px solid black;
+  padding: 20px;
 }
 
 .help-icon {
   color: black;
-  margin-left: 2px;
+  margin-left: 4px;
   font-size: 22px;
+  margin-top: 4px;
 }
 
 .help-icon:hover {
@@ -18,4 +21,8 @@
 
 .command-buttons {
   margin-top: 15px;
+}
+
+.header {
+  display: flex;
 }

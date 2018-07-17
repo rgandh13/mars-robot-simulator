@@ -1,8 +1,9 @@
 .button {
   font-size: 20px;
-  padding: 6px 12px;
   cursor: pointer;
   margin: 15px;
+  width: 130px;
+  height: 50px;
 }
 
 button:disabled {
@@ -11,4 +12,16 @@ button:disabled {
 
 .label-icon {
   padding-top: 4px;
+  font-size: 22.5px !important;
+  padding-left: 4px;
+}
+
+.label-text {
+  padding-top: 4px;
+  padding-right: 3px;
+}
+
+.button-label {
+  display: flex;
+  justify-content: center;
 }

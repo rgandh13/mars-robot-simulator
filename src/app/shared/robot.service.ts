@@ -105,16 +105,16 @@ export class RobotService {
     if (this.robot.x === rowNo && this.robot.y === colNo) {
       switch (this.robot.facingDirection) {
         case Directions.NORTH:
-          facingDirection = 'fa-caret-up';
+          facingDirection = 'android keyboard_arrow_up';
           break;
         case Directions.EAST:
-          facingDirection = 'fa-caret-right';
+          facingDirection = 'android keyboard_arrow_right';
           break;
         case Directions.SOUTH:
-          facingDirection = 'fa-caret-down';
+          facingDirection = 'android keyboard_arrow_down';
           break;
         case Directions.WEST:
-          facingDirection = 'fa-caret-left';
+          facingDirection = 'android keyboard_arrow_left';
           break;
         default:
           facingDirection = '';

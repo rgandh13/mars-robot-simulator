@@ -1,19 +1,21 @@
 <div class="container">
   <mat-form-field>
-    <input matInput placeholder="Enter value of X" [(ngModel)]="x" required/>
+    <input matInput type="number" placeholder="Enter value of X" [(ngModel)]="x" #xValue required/>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Enter value of Y" [(ngModel)]="y" required/>
+    <input matInput type="number" placeholder="Enter value of Y" [(ngModel)]="y" #yValue required />
   </mat-form-field>
 
   <mat-form-field>
-    <mat-select placeholder="Enter Robot's facing direction" [(ngModel)]="facingDirection">
+    <mat-select placeholder="Enter Robot's facing direction" [(ngModel)]="facingDirection" required>
       <mat-option *ngFor="let direction of directions" [value]="direction.value">
         {{direction.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+
+  <div *ngIf="showError" class="error">Please enter right values!</div>
 
   <div class="form-buttons" mat-dialog-actions>
     <app-button label="CANCEL" (click)="onCancel()" [isDisabled]="false"> </app-button>
