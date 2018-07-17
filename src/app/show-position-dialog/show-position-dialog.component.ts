@@ -9,13 +9,14 @@ import { RobotService } from '../shared/robot.service';
   styleUrls: ['./show-position-dialog.component.css']
 })
 export class ShowPositionDialogComponent implements OnInit {
-  robotPosition = {};
+  robotPosition: any;
 
   constructor(
     public robotService: RobotService,
     public dialogRef: MatDialogRef<ShowPositionDialogComponent>) { }
 
   ngOnInit() {
+    // Get the robot position when the user clicks report button.
     this.robotPosition = this.robotService.getRobotPosition();
   }
 

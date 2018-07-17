@@ -14,8 +14,7 @@ export class GlobalService {
   public static LEFT = 'left';
   public static RIGHT = 'right';
 
-
-
+  // Converting Directions enum to an array.
   public static get DIRECTIONS(): FaceDirections[] {
     return [
       { value: Directions.NORTH, viewValue: 'NORTH' },
@@ -24,8 +23,6 @@ export class GlobalService {
       { value: Directions.WEST, viewValue: 'WEST' }
     ];
   }
-
-  constructor() { }
 }
 
 

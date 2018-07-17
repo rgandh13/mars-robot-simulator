@@ -10,6 +10,7 @@ export class HelpDialogComponent {
 
   constructor(public dialogRef: MatDialogRef<HelpDialogComponent>) { }
 
+  // Close the dialog.
   close() {
     this.dialogRef.close();
   }

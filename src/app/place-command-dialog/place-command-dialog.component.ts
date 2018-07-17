@@ -25,6 +25,7 @@ export class PlaceCommandDialogComponent {
     const xCoordinate = parseInt(this.x, 0);
     const yCoordinate = parseInt(this.y, 0);
 
+    // If the inputs are valid, set the robot position accordingly and close the dialog.
     if (this.robotService.isInputValid(xCoordinate, yCoordinate)) {
       this.robotService.setRobotProperties({
         xCoordinate: xCoordinate,
@@ -33,12 +34,13 @@ export class PlaceCommandDialogComponent {
       });
       this.dialogRef.close(true);
     } else {
-      // show validation error on dialog
+      // Show validation error on dialog if inputs are not correct.
       this.showError = true;
     }
   }
 
   onCancel() {
+    // Close the dialog but do not execute any command.
     this.dialogRef.close(false);
   }
 }
